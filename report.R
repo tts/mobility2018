@@ -15,7 +15,7 @@ data <- rawdata %>%
 
 mobility <- data %>% 
   mutate(days = end - start) %>% 
-  filter(days >= 30) %>% 
+  filter(days > 30) %>% 
   group_by(type) %>% 
   summarize(count = n())
 
